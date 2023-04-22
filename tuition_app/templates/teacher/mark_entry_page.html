@@ -1,0 +1,63 @@
+{% extends 'teacher/teacher_base1.html' %}
+{% block content %}
+
+
+
+
+
+<div class="w-100" style="background-image: url(https://img.freepik.com/free-photo/education-college-read-information-table_1150-1615.jpg);background-size: cover;background-repeat: no-repeat;width: 100%;height: 650px;">
+    <div class="w-100" style="height: 650px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2"></div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="container-fluid mt-5" style="background-color: rgba(18, 18, 19, 0.836);border-radius: 25px;height: 400px;margin-left: 13%;">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <img src="https://img.freepik.com/premium-photo/teenager-student-girl-yellow-pointing-finger-side_1368-40175.jpg" alt="" style="margin-left: -4%;height: 400px;width: 107%;margin-top: 0%;">
+    
+                        </div>
+                        <div class="col-sm-12 col-md-8 col-lg-8" style="background-color: white; height: 400px;margin-left: -4px;">
+                            <form method="post" action="/submit_mark/{{ tuition.id }}" enctype="multipart/form-data" class="was_validated ms-5 me-5">
+                                <h1 class="header pt-3" style="text-align: center;color: rgb(10, 10, 10);">ADD MARKS</h1>
+                
+                                {% csrf_token %}
+                                
+                                <div class="form-group mt-2">
+                                    <label for="" style="color: white;">Exam Date :</label>
+                                    <input type="date" class="form-control mt-2" name="exam_date" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="form-group pt-2">
+                                    <input type="text" class="form-control mt-2"  placeholder="Enter exam title" name="exam_title" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="form-group pt-2">
+                                    <input type="number" class="form-control mt-2"  placeholder="Enter mark" name="mark" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="form-group pt-2 pb-3">
+                                    <input type="number" class="form-control mt-2"  placeholder="Enter total mark" name="total" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                
+                                               
+                                <button type="submit" class="btn btn-primary form-control mt-2 mb-5 " style="width: 100%;height: 35px;color: white;">SUBMIT</button>
+                
+                            </form>
+              
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2"></div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

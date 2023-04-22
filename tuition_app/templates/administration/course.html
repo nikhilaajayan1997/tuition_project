@@ -1,0 +1,43 @@
+
+
+
+<div class="modal fade" id="course" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-image: url(https://thehill.com/wp-content/uploads/sites/2/2022/03/ca_collegeenrollment_istock.jpg?w=1280&h=720&crop=1);background-repeat: no-repeat;background-size: cover;">
+        <div class="w-100" style="background-color: rgba(31, 30, 30, 0.822);">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white;">Add Course</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form method="post" action="{% url 'add_course' %}" class="was-validated">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      <!-- <label for="course_name">Username:</label> -->
+                      <input type="text" class="form-control"  placeholder="Enter Course name" name="course_name" required>
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">Please fill out this field.</div>
+                  </div>
+                  <div class="form-group mb-4">
+                      <!-- <label for="uname">Username:</label> -->
+                      <input type="number" class="form-control"  placeholder="Enter course fees" name="course_fee" required>
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">Please fill out this field.</div>
+                  </div>
+                  <button type="submit" class="btn form-control mb-2" style="width: 100%;height: 35px;color: white;background-color: rgb(17, 17, 163);">ADD COURSE</button>
+  
+  
+  
+              </form>
+            
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add Course</button>
+          <a href=""></a>
+          
+        </div> -->
+      </div>
+    </div>
+  </div>

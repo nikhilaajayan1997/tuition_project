@@ -1,0 +1,83 @@
+{% extends 'administration/admin_base.html' %}
+{% block content %}
+
+
+
+
+<style>
+    thead{
+        background-color: rgb(13, 14, 14);
+        /* width: 80%; */
+    }
+    tr:nth-child(even) {
+        
+        background-color: #c5c3c3;
+        color: rgb(12, 12, 12);
+    }
+    tr:nth-child(odd) {
+        
+        background-color: #29282883;
+        color: rgb(245, 243, 243);
+    }
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+<div class="w-100" style="background-image: url(https://img.freepik.com/free-photo/education-college-read-information-table_1150-1615.jpg);background-repeat: no-repeat;background-size: cover;height: 650px;">
+    <div class="w-100" style="height: 650px;">
+        <div class="container" >
+            <h1 class="alert alert-dark text-center w-75" style="margin-left: 20%;">
+                *FEEDBACKS*
+            </h1>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <form>
+                        <table class="table text-center " style="margin-left: 10%;" >
+                            <thead style="color: rgb(247, 246, 246);">
+                                <tr>
+                                    <th scope="col">STUDENT</th>
+                                    <th scope="col">BATCH</th> 
+
+                                    <th scope="col">TEACHER</th>
+                                    <th scope="col">SUBJECT</th>
+                                    <th scope="col">FEEDBACK</th>                            
+                                   
+        
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in data %}
+                                 <tr>
+                                    <td class="pt-4">{{ p.student.student.first_name }}</td>
+                                    <td class="pt-4">{{ p.student.batch.batch_name }}</td>
+                                    <td class="pt-4">{{ p.teacher_name }}</td>
+                                    <td class="pt-4">{{ p.subject }}</td>
+                                    <td class="pt-4">{{ p.feedback }}</td>
+        
+                                    <td>                            
+                                    </td>
+                                 </tr>
+                                 {% endfor %}
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock%}
